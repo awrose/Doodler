@@ -1,11 +1,11 @@
 package com.example.doodler;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -15,9 +15,24 @@ public class DoodleView extends View {
     private Path path = new Path();
     private Paint brush = new Paint();
 
+
     public DoodleView(Context context) {
         super(context);
+        init(context);
+    }
 
+    public DoodleView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
+
+    public DoodleView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context);
+    }
+
+    private void init(Context context) {
+        //do stuff that was in your original constructor...
         brush.setAntiAlias(true);
         brush.setColor(Color.MAGENTA);
         brush.setStyle(Paint.Style.STROKE);
@@ -26,6 +41,7 @@ public class DoodleView extends View {
 
         params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event){

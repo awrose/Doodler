@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/brushSizeBtn"
+        android:layout_width="99dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="49dp"
+        android:text="Brush Size"
+        app:layout_constraintEnd_toStartOf="@+id/clearCanvasBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/opacityBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ColorBtn"
+        android:layout_width="83dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="50dp"
+        android:text="Color"
+        app:layout_constraintEnd_toStartOf="@+id/opacityBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/opacityBtn"
+        android:layout_width="101dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="49dp"
+        android:text="Opacity"
+        app:layout_constraintEnd_toStartOf="@+id/brushSizeBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ColorBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clearCanvasBtn"
+        android:layout_width="98dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="48dp"
+        android:text="Clear Canvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/brushSizeBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

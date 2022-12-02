@@ -6,26 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="408dp"
         android:layout_height="112dp"
+        android:layout_marginTop="16dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="2dp">
+        tools:layout_editor_absoluteX="3dp">
 
         <Button
-            android:id="@+id/brushSizeBtn"
+            android:id="@+id/increaseBrushSize"
             android:layout_width="99dp"
             android:layout_height="55dp"
-            android:layout_marginTop="49dp"
-            android:text="Brush Size"
-            app:layout_constraintEnd_toStartOf="@+id/clearCanvasBtn"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/opacityBtn"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="+"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="49dp" />
+
+        <Button
+            android:id="@+id/decreaseBrushSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            tools:layout_editor_absoluteX="69dp"
+            tools:layout_editor_absoluteY="52dp" />
 
         <Button
             android:id="@+id/ColorBtn"
@@ -57,7 +64,7 @@
             android:text="Clear Canvas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/brushSizeBtn"
+            app:layout_constraintStart_toEndOf="@+id/increaseBrushSize"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.appcompat.widget.Toolbar>

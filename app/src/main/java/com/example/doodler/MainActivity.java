@@ -2,20 +2,21 @@ package com.example.doodler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
+
 
 public class MainActivity extends AppCompatActivity {
+    //Context context;
+    //DoodleView doodle = new DoodleView(context);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Context context;
-        //DoodleView doodleView = new DoodleView(this);
-        //setContentView(doodleView);
+
     }
+
+
+
 
 }

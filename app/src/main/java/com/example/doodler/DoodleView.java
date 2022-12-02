@@ -5,16 +5,17 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 
 public class DoodleView extends View {
     public LayoutParams params;
-    private Path path = new Path();
-    private Paint brush = new Paint();
-
+    public Path path = new Path();
+    public Paint brush = new Paint();
 
     public DoodleView(Context context) {
         super(context);
@@ -66,5 +67,6 @@ public class DoodleView extends View {
     protected void onDraw(Canvas canvas){
         canvas.drawPath(path, brush);
     }
+
 
 }

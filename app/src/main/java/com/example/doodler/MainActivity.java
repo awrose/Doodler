@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                             seekTxt.setText(progress +"%");
-                            paint_brush.setAlpha(progress);
+                            paint_brush.setAlpha(Math.round((float)progress/100*255));
                             currentOpacity(paint_brush.getAlpha());
                         }
                         @Override
@@ -173,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void currentOpacity(int i){
         paintAlpha = i;
-        System.out.println(paintAlpha);
         path = new Path();
     }
 

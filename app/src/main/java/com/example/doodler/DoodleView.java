@@ -57,9 +57,7 @@ public class DoodleView extends View {
         paint_brush.setStrokeCap(Paint.Cap.ROUND);
         paint_brush.setStrokeJoin(Paint.Join.ROUND);
         paint_brush.setStrokeWidth(50f);
-        //added this
         paint_brush.setAlpha(255);
-        //alphaList.add(255);
 
         params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
@@ -87,31 +85,6 @@ public class DoodleView extends View {
                 return false;
         }
     }
-
-    /*@Override
-    public boolean onTouchEvent(MotionEvent event){
-        float x = event.getX();
-        float y = event.getY();
-        //respond to down, move and up events
-        switch(event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                path.moveTo(x, y);
-                break;
-            case MotionEvent.ACTION_MOVE:
-                path.lineTo(x, y);
-                break;
-            case MotionEvent.ACTION_UP:
-                path.lineTo(x, y);
-                //drawCanvas.drawPath(drawPath, drawPath);
-                path.reset();
-                break;
-            default:
-                return false;
-        }
-
-        invalidate();
-        return true;
-    }*/
 
     @Override
     protected void onDraw(Canvas canvas){

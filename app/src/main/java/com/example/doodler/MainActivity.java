@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.app.Dialog;
@@ -16,14 +17,18 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.doodler.DoodleView.current_brush_color;
 import static com.example.doodler.DoodleView.pathList;
 import static com.example.doodler.DoodleView.colorList;
 import static com.example.doodler.DoodleView.current_width;
+import static com.example.doodler.DoodleView.undonePaths;
 import static com.example.doodler.DoodleView.widthList;
 import static com.example.doodler.DoodleView.paintAlpha;
 import static com.example.doodler.DoodleView.alphaList;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static Path path = new Path();
@@ -148,6 +153,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button undoBtn= (Button) findViewById(R.id.undo_btn);
+        undoBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                doodle.undo();
+                //currentList(pathList);
+            }
+        });
+
+        Button redoBtn= (Button) findViewById(R.id.redo_btn);
+        redoBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                doodle.redo();
+                //currentUndoneList(undonePaths);
+            }
+        });
+
         Button clearCanvasBtn= (Button) findViewById(R.id.clearCanvasBtn);
         clearCanvasBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
@@ -155,25 +176,38 @@ public class MainActivity extends AppCompatActivity {
                 alphaList.clear();
                 pathList.clear();
                 colorList.clear();
+                undonePaths.clear();
                 path.reset();
             }
         });
     }
 
+    public void currentList(ArrayList<Path> p){
+        pathList = p;
+        //path.reset();
+        //path = new Path();
+    }
+
+    public void currentUndoneList(ArrayList<Path> undone){
+        undonePaths = undone;
+        //path.reset();
+        //path = new Path();
+    }
+
 
     public void currentColor(int c){
         current_brush_color = c;
-        path = new Path();
+        //path = new Path();
     }
 
     public void currentWidth(float f){
         current_width = f;
-        path = new Path();
+        //path = new Path();
     }
 
     public void currentOpacity(int i){
         paintAlpha = i;
-        path = new Path();
+        //path = new Path();
     }
 
 }
